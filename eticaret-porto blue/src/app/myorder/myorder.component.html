@@ -1,0 +1,113 @@
+<section id="content">
+    <div id="breadcrumb-container" ><div class="container"><ul class="breadcrumb" style="background-color: transparent;margin-bottom:0px"><li><a routerLink="/main">Home</a></li><li class="active">Shopping Cart</li></ul></div></div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <header class="content-title">
+            <h1  style="font-family: Oswald,Arial,sans-serif" class="title">My Orders</h1>
+            <p class="title-desc" style="font-family: Ubuntu;">
+                Orders can be viewed and tracked
+            </p>
+          </header>
+          <div class="xs-margin"></div>
+          <div class="row">
+            <div class="col-md-12 table-responsive">
+              <table class="table cart-table">
+                <thead>
+                  <tr>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                      Product Name
+                    </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                      Traking Number
+                    </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                     Order Date
+                    </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                      Quantity
+                    </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                        Order Number
+                      </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                      Price
+                    </th>
+                    <th class="table-title" style="font-family: Ubuntu;">
+                      Delete
+                      </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of orders">
+                  <tr>
+                    <td class="item-name-col">
+                      <figure style="width: unset">
+                        <a
+                          ><img style="width: 60px;height: 50px"
+                          src="{{ item.image }}"
+                            
+                        /></a>
+                      </figure>
+                      <header class="item-name" style="font-family: Ubuntu;font-size: 10px">
+                        <a >{{ item.title }}</a>
+                      </header>
+                      <ul>
+                       
+                      </ul>
+                    </td>
+                    <td class="item-code">{{ item.traking_no }}</td>
+                    <td class="item-price-col">
+                      <span
+                        class="item-price-special"
+                        style="font-family: &quot;Open Sans&quot;;"
+                        >{{item.orderbydate | date }}</span
+                      >
+                    </td>
+                    <td>
+                      <div class="custom-quantity-input">
+                        <input disabled type="text" name="quantity" value="1" />
+                        <a
+                          href="#"
+                          onclick="return!1"
+                          class="quantity-btn quantity-input-up"
+                          ><i class="fa fa-angle-up"></i
+                        ></a>
+                        <a
+                          href="#"
+                          onclick="return!1"
+                          class="quantity-btn quantity-input-down"
+                          ><i class="fa fa-angle-down"></i
+                        ></a>
+                      </div>
+                    </td>
+                    <td class="item-price-col">
+                        <span
+                        class="item-price-special"
+                        >{{item.sales_id }}</span
+                      >
+                    </td>
+                    <td class="item-total-col">
+                      <span
+                        class="item-price-special"
+                        style="font-family: &quot;Open Sans&quot;;"
+                        >{{item.price | currency: "USD":true:"2.2-4"}}</span
+                      >
+                    </td>
+                    <td>
+                        <a (click)="removecart(item)" class="close-button"></a>
+
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="lg-margin"></div>
+         
+         
+        </div>
+      </div>
+    </div>
+    </section>

@@ -1,0 +1,908 @@
+<div id="option-panel">
+  <div id="option-panel-wrapper">
+    <div id="option-panel-btn" (click)="helpmanpage($event)"></div>
+    <div id="option-panel-container">
+      <ul id="option-panel-tabs-container" class="clearfix">
+        <!-- <li class="active">
+          <a
+            href="#panel-layout"
+            data-toggle="tab"
+            data-panel-title="Layout"
+          ></a>
+        </li> -->
+        <!-- <li>
+          <a
+            href="#panel-home"
+            data-toggle="tab"
+            data-panel-title="Background Settings"
+          ></a>
+        </li>
+        <li>
+          <a
+            href="#panel-color"
+            data-toggle="tab"
+            data-panel-title="Color Settings"
+          ></a>
+        </li> -->
+        <!-- <li>
+          <a
+            href="#panel-font"
+            data-toggle="tab"
+            data-panel-title="Font Settings"
+          ></a>
+        </li>
+        <li><a id="option-close" ></a></li> -->
+      </ul>
+      <div id="option-panel-title" class="clearfix">
+        <span>Support</span>
+        <a
+          href="https://api.whatsapp.com/send?phone=905074177599&text=hi&source=&data="
+          id="option-panel-reset"
+          >WhatsApp</a
+        >
+      </div>
+      <div id="option-panel-content" class="tab-content">
+        <div class="tab-pane fade in active" id="panel-layout">
+          <div
+            id="panel-option-layout"
+            class="panel-group custom-accordion sm-accordion"
+          >
+            <div class="panel">
+              <div class="accordion-header">
+                Sorry, I am not online at the moment. Leave a message and I will
+                get back to you
+                <div style="height: 1.2rem"></div>
+                <div>
+                  <!-- <strong>contact as here</strong> -->
+                  <a
+                    href="https://api.whatsapp.com/send?phone=905074177599&text=hi&source=&data="
+                  >
+                    <img src="../assets/img/whatsapp.png" />
+                  </a>
+                </div>
+              </div>
+              <div id="document-layout" class="collapse in">
+                <div class="panel-body">
+                  <ul class="layout-style-list clearfix">
+                    <form class="card">
+                      <div class="form-group">
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="exname"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exemail"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <textarea
+                          class="form-control"
+                          id="exampleFormControlTextarea1"
+                          rows="3"
+                        ></textarea>
+                      </div>
+
+                      <a style="align-content: center" class="item-add-btn"
+                        ><span style="color :white;" class="icon-cart-text"
+                          >Send</span
+                        ></a
+                      >
+                    </form>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="panel-home">
+          <div
+            id="panel-home-accordion"
+            class="panel-group custom-accordion sm-accordion"
+          >
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Basic Color</span></div>
+                <a
+                  class="accordion-btn opened"
+                  data-toggle="collapse"
+                  data-target="#body-background-color"
+                  data-parent="#panel-home-accordion"
+                ></a>
+              </div>
+              <div id="body-background-color" class="collapse in">
+                <div class="panel-body">
+                  <div id="panel-color-picker"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Patterns</span></div>
+                <a
+                  class="accordion-btn"
+                  data-toggle="collapse"
+                  data-target="#body-background-pattern"
+                  data-parent="#panel-home-accordion"
+                ></a>
+              </div>
+              <div id="body-background-pattern" class="collapse">
+                <div class="panel-body">
+                  <ul class="clearfix pattern-box-list">
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern1.png"
+                        src="../assets/img/patterns/pattern1.png"
+                        alt="pattern 1"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern2.png"
+                        src="../assets/img/patterns/pattern2.png"
+                        alt="pattern 2"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern3.png"
+                        src="../assets/img/patterns/pattern3.png"
+                        alt="pattern 3"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern4.png"
+                        src="/assets/img/patterns/pattern4.png"
+                        alt="pattern 4"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern5.png"
+                        src="../assets/img/patterns/pattern5.png"
+                        alt="pattern 5"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern6.png"
+                        src="../assets/img/patterns/pattern6.png"
+                        alt="pattern 6"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern7.png"
+                        src="../assets/img/patterns/pattern7.png"
+                        alt="pattern 7"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern8.png"
+                        src="../assets/img/patterns/pattern8.png"
+                        alt="pattern 8"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern9.png"
+                        src="../assets/img/patterns/pattern9.png"
+                        alt="pattern 9"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/src../assets/img/patterns/pattern10.png"
+                        src="../assets/img/patterns/pattern10.png"
+                        alt="pattern 10"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern11.png"
+                        src="../assets/img/patterns/pattern11.png"
+                        alt="pattern 11"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern12.png"
+                        src="../assets/img/patterns/pattern12.png"
+                        alt="pattern 12"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern13.png"
+                        src="../assets/img/patterns/pattern13.png"
+                        alt="pattern 13"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern14.png"
+                        src="../assets/img/patterns/pattern14.png"
+                        alt="pattern 14"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern15.png"
+                        src="../assets/img/patterns/pattern15.png"
+                        alt="pattern 15"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern16.png"
+                        src="../assets/img/patterns/pattern16.png"
+                        alt="pattern 16"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="../assets/img/patterns/pattern17.png"
+                        src="../assets/img/patterns/pattern17.png"
+                        alt="pattern 17"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern18.png"
+                        src="../assets/img/patterns/pattern18.png"
+                        alt="pattern 18"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern19.png"
+                        src="../assets/img/patterns/pattern19.png"
+                        alt="pattern 19"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern20.png"
+                        src="../assets/img/patterns/pattern20.png"
+                        alt="pattern 20"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern21.png"
+                        src="../assets/img/patterns/pattern21.png"
+                        alt="pattern 21"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern22.png"
+                        src="../assets/img/patterns/pattern22.png"
+                        alt="pattern 22"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern23.png"
+                        src="../assets/img/patterns/pattern23.png"
+                        alt="pattern 23"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern24.png"
+                        src="../assets/img/patterns/pattern24.png"
+                        alt="pattern 24"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern25.png"
+                        src="../assets/img/patterns/pattern25.png"
+                        alt="pattern 25"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern26.png"
+                        src="../assets/img/patterns/pattern26.png"
+                        alt="pattern 26"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern27.png"
+                        src="../assets/img/patterns/pattern27.png"
+                        alt="pattern 27"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern28.png"
+                        src="../assets/img/patterns/pattern28.png"
+                        alt="pattern 28"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern29.png"
+                        src="../assets/img/patterns/pattern29.png"
+                        alt="pattern 29"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        data-src="/assets/img/patterns/pattern30.png"
+                        src="../assets/img/patterns/pattern30.png"
+                        alt="pattern 30"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="panel-color">
+          <div
+            id="panel-color-accordion"
+            class="panel-group custom-accordion sm-accordion"
+          >
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Green Mode</span></div>
+                <a
+                  class="accordion-btn opened"
+                  data-toggle="collapse"
+                  data-target="#color-mode"
+                  data-parent="#panel-color-accordion"
+                ></a>
+              </div>
+              <ul class="colorbox-list clearfix collapse in" id="color-mode">
+                <li>
+                  <div class="color-box first-color"><span></span></div>
+                  <p>First Color</p>
+                </li>
+                <li>
+                  <div class="color-box second-color"><span></span></div>
+                  <p>Second Color</p>
+                </li>
+                <li>
+                  <div class="color-box third-color"><span></span></div>
+                  <p>Third Color</p>
+                </li>
+                <li>
+                  <div class="color-box fourth-color"><span></span></div>
+                  <p>Fourth Color</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="panel-font">
+          <div
+            id="panel-font-accordion"
+            class="panel-group custom-accordion sm-accordion"
+          >
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>First Font</span></div>
+                <a
+                  class="accordion-btn opened"
+                  data-toggle="collapse"
+                  data-target="#first-font-container"
+                  data-parent="#panel-font-accordion"
+                ></a>
+              </div>
+              <div class="collapse in" id="first-font-container">
+                <select class="form-control" name="first-font" id="first-font"
+                  ><option value="Arial">Arial</option
+                  ><option value="Open Sans">Open Sans</option
+                  ><option value="PT Sans">PT Sans</option
+                  ><option value="Lato">Lato</option
+                  ><option value="Roboto">Roboto</option
+                  ><option value="Droid Sans">Droid Sans</option
+                  ><option value="Ubuntu">Ubuntu</option
+                  ><option value="Arvo">Arvo</option
+                  ><option value="Droid Serif">Ubuntu</option
+                  ><option value="Nunito">Nunito</option></select
+                >
+              </div>
+            </div>
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Second Font</span></div>
+                <a
+                  class="accordion-btn"
+                  data-toggle="collapse"
+                  data-target="#second-font-container"
+                  data-parent="#panel-font-accordion"
+                ></a>
+              </div>
+              <div class="collapse" id="second-font-container">
+                <select class="form-control" name="second-font" id="second-font"
+                  ><option value="Oswald">Oswald</option
+                  ><option value="Gudea">Gudea</option
+                  ><option value="Open Sans">Open Sans</option
+                  ><option value="PT Sans">PT Sans</option
+                  ><option value="Lato">Lato</option
+                  ><option value="Roboto">Roboto</option
+                  ><option value="Droid Sans">Droid Sans</option
+                  ><option value="Ubuntu">Ubuntu</option
+                  ><option value="Arvo">Arvo</option
+                  ><option value="Droid Serif">Droid Serif</option
+                  ><option value="Nunito">Nunito</option></select
+                >
+              </div>
+            </div>
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Third Font</span></div>
+                <a
+                  class="accordion-btn"
+                  data-toggle="collapse"
+                  data-target="#third-font-container"
+                  data-parent="#panel-font-accordion"
+                ></a>
+              </div>
+              <div class="collapse" id="third-font-container">
+                <select class="form-control" name="third-font" id="third-font"
+                  ><option value="PT Sans">PT Sans</option
+                  ><option value="Gudea">Gudea</option
+                  ><option value="Open Sans">Open Sans</option
+                  ><option value="Lato">Lato</option
+                  ><option value="Roboto">Roboto</option
+                  ><option value="Droid Sans">Droid Sans</option
+                  ><option value="Ubuntu">Ubuntu</option
+                  ><option value="Arvo">Arvo</option
+                  ><option value="Droid Serif">Droid Serif</option
+                  ><option value="Nunito">Nunito</option></select
+                >
+              </div>
+            </div>
+            <div class="panel">
+              <div class="accordion-header">
+                <div class="accordion-title"><span>Fourth Font</span></div>
+                <a
+                  class="accordion-btn"
+                  data-toggle="collapse"
+                  data-target="#fourth-font-container"
+                  data-parent="#panel-font-accordion"
+                ></a>
+              </div>
+              <div class="collapse" id="fourth-font-container">
+                <select class="form-control" name="fourth-font" id="fourth-font"
+                  ><option value="Gudea">Gudea</option
+                  ><option value="Open Sans">Open Sans</option
+                  ><option value="PT Sans">PT Sans</option
+                  ><option value="Lato">Lato</option
+                  ><option value="Roboto">Roboto</option
+                  ><option value="Droid Sans">Droid Sans</option
+                  ><option value="Ubuntu">Ubuntu</option
+                  ><option value="Arvo">Arvo</option
+                  ><option value="Droid Serif">Droid Serif</option
+                  ><option value="Nunito">Nunito</option></select
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <header id="header" class="header2">
+    <div id="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-top-left">
+              <ul id="top-links" class="clearfix">
+                <li>
+                  <a title="My Wishlist"
+                    ><span class="top-icon top-icon-pencil"></span
+                    ><span class="hide-for-xs">My Wishlist</span></a
+                  >
+                </li>
+                <li *ngIf="isAuthenticated">
+                    <div ngbDropdown>
+                        <a ngbDropdownToggle title="My Account"
+                    ><span class="top-icon top-icon-user"></span
+                    ><span class="hide-for-xs" >My Account</span></a
+                  >
+                      
+                        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+                          <button routerLink="/myorder" class="dropdown-item">My Orders</button>
+                          
+                        </div>
+                      </div>
+
+                 
+                </li>
+                <li>
+                  <a routerLink="cart" title="My Cart"
+                    ><span class="top-icon top-icon-cart"></span
+                    ><span class="hide-for-xs">My Cart</span></a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/boxenter" title="Checkout"
+                    ><span class="top-icon top-icon-check"></span
+                    ><span class="hide-for-xs">Checkout</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="header-top-right">
+              <div
+                *ngIf="!isAuthenticated"
+                class="header-text-container pull-right"
+              >
+                <p class="header-text">Welcome to Meerschaum!</p>
+                <p class="header-link">
+                  <a routerLink="/login">login</a>&nbsp;or&nbsp;<a
+                    routerLink="/createaccount"
+                    >create an account</a>
+                </p>
+              </div>
+              <div
+              *ngIf="isAuthenticated"
+                class="header-text-container pull-right">
+                <p class="header-text">Welcome to {{getCurrentUsername}}</p>
+                <p class="header-link"><a (click)="authservice.logOut()"> Logout</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="inner-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-5 col-xs-12 logo-container">
+            <h1 class="logo clearfix">
+              <span>Responsive eCommerce Template</span>
+              <a routerLink="main" title="Meerschaum eCommerce Template"
+                ><img
+                  src="../assets/img/logo22.png"
+                  alt="Meerschaum Commerce Template"
+                  width="188"
+                  height="67"
+              /></a>
+            </h1>
+          </div>
+          <div class="col-md-7 col-sm-7 col-xs-12 header-inner-right">
+            <div class="header-inner-right-wrapper clearfix">
+              <div class="dropdown-cart-menu-container pull-right">
+                <div class="btn-group dropdown-cart">
+                  <button
+                    type="button"
+                    class="btn btn-custom dropdown-toggle"
+                  
+                    data-toggle="dropdown"
+                  >
+                    <span class="cart-menu-icon"></span>
+                    {{ cartservice.carts.length }} item(s)
+                    <span class="drop-price"
+                      >-
+                      {{ cartservice.cartsum | currency: "USD":true:"2.2-4" }}
+                    </span>
+                  </button>
+                  <div
+                    class="dropdown-menu dropdown-cart-menu pull-right clearfix"
+                    role="menu"
+                  >
+                    <p class="dropdown-cart-description">
+                      Recently added item(s).
+                    </p>
+                    <ul
+                      class="dropdown-cart-product-list"
+                      *ngFor="let item of cartservice.carts"
+                    >
+                      <li class="item clearfix">
+                        <a
+                          (click)="cartservice.cartremove(item)"
+                          title="Delete item"
+                          class="delete-item"
+                          ><i class="fa fa-times"></i
+                        ></a>
+                        <a title="Edit item" class="edit-item"
+                          ><i class="fa fa-pencil"></i
+                        ></a>
+                        <figure>
+                          <a routerLink="/singleproduct/{{ item.product_ID }}"
+                            ><img src="{{ item.image }}" alt="phone 4"
+                          /></a>
+                        </figure>
+                        <div class="dropdown-cart-details">
+                          <p class="item-name">
+                            <a
+                              routerLink="/singleproduct/{{ item.product_ID }}"
+                              >{{ item.title }}</a
+                            >
+                          </p>
+                          <p>
+                            1x
+                            <span class="item-price">{{
+                              item.price | currency: "USD":true:"2.2-4"
+                            }}</span>
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="dropdown-cart-total">
+                      <li>
+                        <span class="dropdown-cart-total-title">Shipping:</span
+                        >$0
+                      </li>
+                      <li>
+                        <span class="dropdown-cart-total-title">Total:</span
+                        >{{ cartservice.cartsum | currency: "USD":true:"2.2-4"
+                        }}<span class="sub-price"></span>
+                      </li>
+                    </ul>
+                    <div class="dropdown-cart-action">
+                      <p>
+                        <a    routerLink="cart" class="btn btn-custom-2 btn-block"
+                          >Cart</a
+                        >
+                      </p>
+                      <p>
+                        <a routerLink="/boxenter" class="btn btn-custom btn-block"
+                          >Checkout</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-top-dropdowns pull-right">
+                <!-- <div class="btn-group dropdown-money">
+                  <button
+                    type="button"
+                    class="btn btn-custom dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
+                    <span class="hide-for-xs">US Dollar</span
+                    ><span class="hide-for-lg">$</span>
+                  </button>
+                  <ul class="dropdown-menu pull-right" role="menu">
+                    <li>
+                      <a
+                        ><span class="hide-for-xs">Euro</span
+                        ><span class="hide-for-lg">&euro;</span></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        ><span class="hide-for-xs">Pound</span
+                        ><span class="hide-for-lg">&pound;</span></a
+                      >
+                    </li>
+                  </ul>
+                </div> -->
+                <div class="btn-group dropdown-language">
+                  <button
+                    type="button"
+                    class="btn btn-custom dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
+                    <span class="flag-container"
+                      ><img
+                        src="../assets/img/england-flag.png"
+                        alt="flag of england"
+                    /></span>
+                    <span class="hide-for-xs">English</span>
+                  </button>
+                  <ul class="dropdown-menu pull-right" role="menu">
+                    <li>
+                      <a
+                        ><span class="flag-container"
+                          ><img
+                            src="../assets/img/italy-flag.png"
+                            alt="flag of england"/></span
+                        ><span class="hide-for-xs">Italian</span></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        ><span class="flag-container"
+                          ><img
+                            src="../assets/img/spain-flag.png"
+                            alt="flag of italy"/></span
+                        ><span class="hide-for-xs">Spanish</span></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        ><span class="flag-container"
+                          ><img
+                            src="../assets/img/france-flag.png"
+                            alt="flag of france"/></span
+                        ><span class="hide-for-xs">French</span></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        ><span class="sm-separator"
+                          ><img
+                            src="../assets/img/germany-flag.png"
+                            alt="flag of germany"/></span
+                        ><span class="hide-for-xs">German</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 clearfix">
+              <nav id="main-nav">
+                <div id="responsive-nav">
+                  <div  id="responsive-nav-button">
+                    Menu <span  data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"  id="responsive-nav-button-icon"></span>
+                  </div>
+                </div>
+           
+                <nav *ngIf="mobile"  class="navbar navbar-expand-lg navbar-light bg-light" style="border-top: 5px solid #09a6b2;z-index: 899;width: 100%;left: 0;top: 100%;position: absolute;margin-bottom: 20px;min-height: unset">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                        <li style="font: 700 17px/25px 'PT Sans',sans-serif;" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-item">
+                          <a  routerLinkActive="active" class="nav-link"routerLink="main">HOME</a>
+                        </li>
+                        <li style="font: 700 17px/25px 'PT Sans',sans-serif;" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-item">
+                          <a   routerLinkActive="active" class="nav-link"routerLink="shop">SHOP</a>
+                        </li>
+                        <li style="font: 700 17px/25px 'PT Sans',sans-serif;" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-item">
+                          <a  routerLinkActive="active" class="nav-link" routerLink="contact">ABOUT</a>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                  </nav>
+                
+                <ul *ngIf="!mobile" id="menu"     class="menu clearfix">
+                  <li><a class="active" routerLink="main">HOME</a></li>
+                  <li class="mega-menu-container">
+                    <a routerLink="shop">SHOP</a>
+                  </li>
+
+                  <li><a routerLink="contact">ABOUT</a></li>
+                 
+                </ul>
+              
+              </nav>
+              <div id="quick-access">
+                <form
+                  class="form-inline quick-search-form"
+                  role="form"
+                  action="#"
+                >
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search here"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    id="quick-search"
+                    class="btn btn-custom"
+                  ></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+<footer id="footer">
+  <div id="newsletter-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+          <h3>Sing up to receive the latest fashion news</h3>
+          <form id="register-newsletter">
+            <input
+              type="text"
+              name="newsletter"
+              required=""
+              placeholder="Enter your email address"
+            />
+            <input type="submit" class="btn btn-custom-3" value="SIGN UP" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="inner-footer">
+    <div class="container">
+      <div class="row">
+        <div  class="col-md-3 col-sm-4 col-xs-12 widget">
+          <h3>MY ACCOUNT</h3>
+          <ul *ngIf="!isAuthenticated" class="links">
+            <li><a>My account</a></li>
+            <li><a>Personal information</a></li>
+            <li><a>Addresses</a></li>
+            <li><a>Discount</a></li>
+            <li><a>Order History</a></li>
+            <li><a>Your Vouchers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+          <h3>INFORMATION</h3>
+          <ul class="links">
+            <li><a>New products</a></li>
+            <li><a>Top sellers</a></li>
+            <li><a>Specials</a></li>
+            <li><a>Manufacturers</a></li>
+            <li><a>Suppliers</a></li>
+            <li><a>Our stores</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+          <h3>MY ACCOUNT</h3>
+          <div class="twitter_feed_widget">
+              searching twitter...
+          </div>
+        </div>
+        <div class="clearfix visible-sm"></div>
+        <div class="col-md-3 col-sm-12 col-xs-12 widget">
+          <h3>FACEBOOK LIKE BOX</h3>
+          <div class="facebook-likebox">
+            <iframe
+              src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fenvato&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-12 footer-social-links-container">
+          <ul class="social-links clearfix">
+            <li><a class="social-icon icon-facebook"></a></li>
+            <li><a class="social-icon icon-twitter"></a></li>
+            <li><a class="social-icon icon-rss"></a></li>
+            <li><a class="social-icon icon-delicious"></a></li>
+            <li><a class="social-icon icon-linkedin"></a></li>
+            <li><a class="social-icon icon-flickr"></a></li>
+            <li><a class="social-icon icon-skype"></a></li>
+            <li><a class="social-icon icon-email"></a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-12 footer-text-container">
+          <p>&copy; 2014 Powered by Company&trade;. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="scroll-top" (click)="onActivate($event)" title="Scroll to Top"
+  ><i class="fa fa-angle-up"></i
+></a>

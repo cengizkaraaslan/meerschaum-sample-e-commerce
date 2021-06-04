@@ -1,0 +1,598 @@
+<div id="wrapper">
+  <section id="content">
+    <div id="slider-rev-container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="../assets/img/slider/16.jpg" alt="Los Angeles" />
+          </div>
+
+          <div class="item">
+            <img src="../assets/img/slider/14.jpg" alt="Chicago" />
+          </div>
+
+          <div class="item">
+            <img src="../assets/img/slider/17.jpg" alt="New York" />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a
+          style="color: #14bfcc"
+          class="left carousel-control"
+          href="#myCarousel"
+          data-slide="prev"
+        >
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <div class="tp-rightarrow tparrows default round hidearrows"></div>
+        <a
+          style="color: #14bfcc"
+          class="right carousel-control"
+          href="#myCarousel"
+          data-slide="next"
+        >
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="lg-margin"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 main-content">
+              <div class="row home-banners">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <a
+                    ><img
+                      src="../assets/img/middle-banner-1.png"
+                      alt="Home Big Banner 1"
+                      class="img-responsive"
+                  /></a>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <a
+                    ><img
+                      src="../assets/img/middle-banner-2.png"
+                      alt="Home Big Banner 2"
+                      class="img-responsive"
+                  /></a>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <a
+                    ><img
+                      src="../assets/img/middle-banner-3.png"
+                      alt="Home Big Banner 2"
+                      class="img-responsive"
+                  /></a>
+                </div>
+              </div>
+              <div class="lg-margin"></div>
+              <div class="latest-items carousel-wrapper">
+                <header class="content-title">
+                  <div class="title-bg"><h2 class="title">Latest News</h2></div>
+                  <p class="title-desc">
+                    Save your money and time with our store. Here's the best
+                    part of our impressive assortment.
+                  </p>
+                </header>
+              </div>
+              <div class="lg-margin"></div>
+              <div class="row">
+                <p *ngIf="!productstopseller">Loading data ...</p>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div
+                    ng2-carouselamos
+                    [width]="max"
+                    [items]="productstopseller"
+                    [$item]="itemTemplate"
+                    [$prev]="prevTemplate"
+                    [$next]="nextTemplate"
+                    (onSelectedItem)="
+                      selectedItem = $event.item; selectedIndex = $event.index
+                    "
+                  ></div>
+
+                  <ng-template #prevTemplate>
+                    <div
+                      id="hot-items-slider-prev"
+                      class="carousel-btn carousel-btn-prev"
+                    ></div>
+                  </ng-template>
+
+                  <ng-template #nextTemplate>
+                    <div
+                      id="latest-items-slider-next"
+                      class="carousel-btn carousel-btn-next carousel-space"
+                    ></div>
+                  </ng-template>
+
+                  <ng-template let-item let-i="index" #itemTemplate>
+                    <div class="item item-hover" style="margin: 4px">
+                      <div class="item-image-wrapper">
+                        <figure class="item-image-container">
+                          <div
+                            routerLink="/singleproduct/{{ item.product_ID }}"
+                          >
+                            <img
+                              style="height:200px;width: 250px"
+                              src="{{ item.image }}"
+                              alt="item1"
+                              class="item-image"
+                              routerLink="/singleproduct/{{ item.product_ID }}"
+                            />
+                            <img
+                              style="height:200px"
+                              src="{{ item.image1 }}"
+                              alt="item1  Hover"
+                              class="item-image-hover"
+                            />
+                          </div>
+                        </figure>
+                        <div class="item-price-container">
+                          <span class="old-price"
+                            >{{
+                              item.price + (item.price / 100) * 10
+                                | currency: "USD":true:"2.2-4"
+                            }}<span class="sub-price"></span
+                          ></span>
+                          <span class="item-price"
+                            >{{ item.price | currency: "USD":true:"2.2-4"
+                            }}<span class="sub-price"></span
+                          ></span>
+                        </div>
+                        <span class="new-rect">New</span>
+                        <span class="discount-rect">-20%</span>
+                      </div>
+                      <div class="item-meta-container">
+                        <div class="ratings-container">
+                          <li style="width:80%" class="stars-active">
+                            <ng-template #t let-fill="fill">
+                              <span class="star" [class.full]="fill === 100">
+                                <span class="half" [style.width.%]="fill"
+                                  >&hearts;</span
+                                >&hearts;
+                              </span>
+                            </ng-template>
+
+                            <ngb-rating
+                              [rate]="3"
+                              [starTemplate]="t"
+                              [readonly]="true"
+                              max="5"
+                            ></ngb-rating>
+                          </li>
+
+                          <span class="ratings-amount">5 Reviews</span>
+                        </div>
+                        <h3
+                          class="item-name"
+                          routerLink="/singleproduct/{{ item.product_ID }}"
+                        >
+                          <h4>{{ item.title | titlecase }}</h4>
+                          <!-- <a   routerLink="/singleproduct/{{ item.product_ID }}">{{ item.title | titlecase}}</a> -->
+                        </h3>
+                        <div style="color: white" class="item-action">
+                          <a (click)="cartadd(item)" class="item-add-btn"
+                            ><span class="icon-cart-text">Add to Cart</span></a
+                          >
+                          <div class="item-action-inner">
+                            <a class="icon-button icon-like">Favourite</a>
+                            <a class="icon-button icon-compare">Checkout</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+
+              <!-- <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                      <table>
+                        <tr>
+                          <td style="width: 558px;height: 300px">
+                             <img src="../assets/img/category/banner-1.jpg" />
+     
+                          </td>
+                          <td style="width: 20px">
+                           </td>
+                          <td style="width: 300px;height: 300px"> 
+                             <img src="../assets/img/category/banner-2-mobile.jpg" />
+     
+                          </td>
+                          <td style="width: 20px">
+                           </td>
+                        
+                        </tr>
+                        <tr>
+                            <td style="width: 558px;height: 300px">
+                               <img src="../assets/img/category/banner-3.jpg" />
+       
+                            </td>
+                            <td style="width: 20px">
+                             </td>
+                             <td style="width: 300px;height: 300px"> 
+                                <img src="../assets/img/category/banner-4.jpg" />
+        
+                             </td>
+                            <td style="width: 20px">
+                             </td>
+                            
+                          </tr>
+                      </table>
+                    
+                     </div>
+              </div> -->
+              <div class="xlg-margin"></div>
+              <div class="hot-items carousel-wrapper">
+                <header class="content-title">
+                  <div class="title-bg">
+                    <h2 class="title">Most Category</h2>
+                  </div>
+                  <p class="title-desc">
+                    Special offers and biggest discounts for the most popular
+                    products.
+                  </p>
+                </header>
+                <div *ngIf="!mobile" class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div style="padding-right: 10px;" class="imagecontainer">
+                        <img
+                          class="image"
+                          routerLink="/shop"
+                          src="../assets/img/category/banner10.jpg"
+                        />
+                        <div
+                          style=" position: absolute; top: 8px; left: 36px;color: white;padding-top: 6rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                          class="top-left"
+                        >
+                          FIND A PIPE THAT SUITS
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="content">
+                      <div  class="row">
+                        <div style="padding-left: 10px;" class="imagecontainer">
+                          <img
+                            routerLink="/shop"  class="image"
+                            src="../assets/img/category/banner11.jpg"
+                          />
+                          <div
+                            style=" position: absolute; top: 8px; left: 86px;color: white;padding-top: 5rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                            class="top-left"
+                          >
+                            ACCESSORIES
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  *ngIf="!mobile"
+                  style="margin-top: 20px"
+                  class="col-md-12 col-sm-12 col-xs-12"
+                >
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div style="padding-right: 10px;" class="imagecontainer">
+                        <img
+                          routerLink="/shop"  class="image"
+                          src="../assets/img/category/banner-12.jpg"
+                        />
+                        <div
+                          style=" position: absolute; top: 8px; left: 36px;color: white;padding-top: 6rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                          class="top-left"
+                        >
+                          PIPE PLUGS
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="content">
+                     
+                        <div  class="row">
+                            <div style="padding-left: 10px;" class="imagecontainer">
+                          <img
+                            routerLink="/shop"  class="image"
+                            src="../assets/img/category/banner-13.jpg"
+                          />
+                          <div
+                            style=" position: absolute; top: 8px; left: 86px;color: white;padding-top: 6rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                            class="top-left"
+                          >
+                            PIPE TRAY
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="mobile" class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-sm-6">
+                    <div style="margin-top: 10px" class="row">
+                      <img
+                        routerLink="/shop"
+                        src="../assets/img/category/banner10mobile.jpg"
+                      />
+                      <div
+                        style=" position: absolute; top: 8px; left: 36px;color: white;padding-top: 6rem;FONT-SIZE:  large;font-family: glyphicons-halflings-regular"
+                        class="top-left"
+                      >
+                        FIND A PIPE THAT SUITS
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="content">
+                      <div style="margin-top: 10px" class="row">
+                        <img
+                          routerLink="/shop"
+                          src="../assets/img/category/banner11mobile.jpg"
+                        />
+                        <div
+                          style=" position: absolute; top: 8px; left: 86px;color: white;padding-top: 6rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                          class="top-left"
+                        >
+                          ACCESSORIES
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  *ngIf="mobile"
+                  style="margin-top:  0px;"
+                  class="col-md-12 col-sm-12 col-xs-12"
+                >
+                  <div class="col-sm-6">
+                    <div style="margin-top: 10px" class="row">
+                      <img
+                        routerLink="/shop"
+                        src="../assets/img/category/banner-12mobile.jpg"
+                      />
+                      <div
+                        style=" position: absolute; top: 8px; left: 36px;color: white;padding-top: 6rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                        class="top-left"
+                      >
+                        PIPE PLUGS
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="content">
+                      <div style="margin-top: 10px" class="row">
+                        <img
+                          routerLink="/shop"
+                          src="../assets/img/category/banner-13mobile.jpg"
+                        />
+                        <div
+                          style=" position: absolute; top: 8px; left: 86px;color: white;padding-top: 5rem;FONT-SIZE: x-large;font-family: glyphicons-halflings-regular"
+                          class="top-left"
+                        >
+                          PIPE TRAY
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="xlg-margin"></div>
+              <div class="hot-items carousel-wrapper">
+                <header class="content-title">
+                  <div class="title-bg"><h2 class="title">On Sale</h2></div>
+                  <p class="title-desc">
+                    Only with us you can get a new model with a discount.
+                  </p>
+                </header>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <p *ngIf="!productstopNew">Loading data ...</p>
+                  <div
+                    ng2-carouselamos
+                    [width]="max"
+                    [items]="productstopNew"
+                    [$item]="itemTemplate"
+                    [$prev]="prevTemplate"
+                    [$next]="nextTemplate"
+                    (onSelectedItem)="
+                      selectedItem = $event.item; selectedIndex = $event.index
+                    "
+                  ></div>
+
+                  <ng-template #prevTemplate>
+                    <div
+                      id="hot-items-slider-prev"
+                      class="carousel-btn carousel-btn-prev"
+                    ></div>
+                  </ng-template>
+
+                  <ng-template #nextTemplate>
+                    <div
+                      id="latest-items-slider-next"
+                      class="carousel-btn carousel-btn-next carousel-space"
+                    ></div>
+                  </ng-template>
+
+                  <ng-template let-item let-i="index" #itemTemplate>
+                    <div class="item item-hover" style="margin: 4px">
+                      <div class="item-image-wrapper">
+                        <figure class="item-image-container">
+                          <div
+                            routerLink="/singleproduct/{{ item.product_ID }}"
+                          >
+                            <img
+                              style="height:200px;width: 250px"
+                              src="{{ item.image }}"
+                              alt="item1"
+                              class="item-image"
+                              routerLink="/singleproduct/{{ item.product_ID }}"
+                            />
+                            <img
+                              style="height:200px"
+                              src="{{ item.image1 }}"
+                              alt="item1  Hover"
+                              class="item-image-hover"
+                            />
+                          </div>
+                        </figure>
+                        <div class="item-price-container">
+                          <span class="old-price"
+                            >{{
+                              item.price + (item.price / 100) * 10
+                                | currency: "USD":true:"2.2-4"
+                            }}<span class="sub-price"></span
+                          ></span>
+                          <span class="item-price"
+                            >{{ item.price | currency: "USD":true:"2.2-4"
+                            }}<span class="sub-price"></span
+                          ></span>
+                        </div>
+                        <span class="new-rect">New</span>
+                        <span class="discount-rect">-15%</span>
+                      </div>
+                      <div class="item-meta-container">
+                        <div class="ratings-container">
+                          <li style="width:80%" class="stars-active">
+                            <ngb-rating
+                              [rate]="3"
+                              [readonly]="true"
+                              max="5"
+                              style="color:#f5c70d;font-size: x-large"
+                            ></ngb-rating>
+                          </li>
+
+                          <span class="ratings-amount">5 Reviews</span>
+                        </div>
+                        <h3 class="item-name">
+                          <h4>{{ item.title | titlecase }}</h4>
+                          <!-- <a   routerLink="/singleproduct/{{ item.product_ID }}">{{ item.title | titlecase}}</a> -->
+                        </h3>
+                        <div style="color: white" class="item-action">
+                          <a (click)="cartadd(item)" class="item-add-btn"
+                            ><span class="icon-cart-text">Add to Cart</span></a
+                          >
+                          <div class="item-action-inner">
+                            <a class="icon-button icon-like">Favourite</a>
+                            <a class="icon-button icon-compare">Checkout</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg-margin"></div>
+          <div id="brand-slider-container" class="carousel-wrapper">
+            <header class="content-title">
+              <div class="title-bg"><h2 class="title">WholeSale Catalog</h2></div>
+            </header>
+            <div *ngIf="!mobile" class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div   class="">
+                      <img
+                        routerLink="/shop"
+                        src="https://www.altinaypipes.com/wp-content/uploads/2017/01/altinay_meerschaum_catalog1-701x400.jpg"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="content">
+                    <div  class="row">
+                      <div   class="imagecontainer">
+                        <img
+                          routerLink="/shop"  
+                          src="https://www.altinaypipes.com/wp-content/uploads/2017/01/altinay_meerschaum_catalog2-701x400.jpg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                      <div   class="imagecontainer">
+                        <img
+                          routerLink="/shop"
+                          src="https://www.altinaypipes.com/wp-content/uploads/2017/01/altinay_meerschaum_catalog3-701x400.jpg"
+                        />
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="content">
+                      <div  class="row">
+                        <div  class="imagecontainer">
+                          <img
+                            routerLink="/shop"  
+                            src="https://www.altinaypipes.com/wp-content/uploads/2018/10/4-701x400.jpg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="row">
+                        <div  class="imagecontainer">
+                          <img
+                            routerLink="/shop"
+                            src="https://www.altinaypipes.com/wp-content/uploads/2017/01/altinay_meerschaum_catalog5-701x400.jpg"
+                          />
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="content">
+                        <div  class="row">
+                          <div  class="imagecontainer">
+                            <img
+                              routerLink="/shop"  
+                              src="https://www.altinaypipes.com/wp-content/uploads/2018/10/6-1400x800.jpg"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                          <div   class="imagecontainer">
+                            <img
+                              routerLink="/shop"
+                              src="https://www.altinaypipes.com/wp-content/uploads/2017/01/altinay_meerschaum_catalog7-701x400.jpg"
+                            />
+                          
+                           
+                        </div>
+                      </div>
+                     
+                      </div>
+              </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

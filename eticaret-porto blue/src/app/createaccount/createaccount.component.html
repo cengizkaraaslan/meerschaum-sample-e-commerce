@@ -1,0 +1,566 @@
+<section id="content">
+  <div id="breadcrumb-container">
+    <div class="container">
+      <ul
+        class="breadcrumb"
+        style="background-color: transparent;margin-bottom:0px"
+      >
+        <li><a routerLink="/main">Home</a></li>
+        <li class="active">Register account</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header class="content-title">
+          <h1 class="title">Register Account</h1>
+          <p class="title-desc" style="font-family: Ubuntu;">
+            If you already have an account, please login at <a>login page</a>.
+          </p>
+        </header>
+        <div class="xs-margin"></div>
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="register()"
+          id="register-form"
+        >
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <fieldset>
+                <h2 class="sub-title">YOUR PERSONAL DETAILS</h2>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-user"></span
+                    ><span class="input-text">First Name*</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your First Name"
+                    id="name"
+                    name="name"
+                    formControlName="name" autofocus
+                  />
+                  <span
+                  class="help-block"  style="color: red"
+                  *ngIf="
+                    registerForm.get('name').hasError('required') &&
+                    registerForm.get('name').touched">
+                  name required
+                </span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-user"></span
+                    ><span class="input-text">Last Name*</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Last Name"
+                    id="surname"
+                    name="surname"
+                    formControlName="surname" autofocus
+                  />
+                  <span
+                  class="help-block"  style="color: red"
+                  *ngIf="
+                    registerForm.get('surname').hasError('required') &&
+                    registerForm.get('surname').touched">
+                  surname required
+                </span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-email"></span
+                    ><span class="input-text">Email*</span></span>
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Email"
+                    id="email"
+                    name="email" autofocus
+                    formControlName="email"
+                  />
+                  <span style="color: red" class="help-block" *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">
+                      e-mail required
+                    </span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-phone"></span
+                    ><span class="input-text">Telephone*</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Telephone"
+                    id="telephone"
+                    name="telephone"
+                    formControlName="telephone"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-fax"></span
+                    ><span class="input-text">Fax</span></span
+                  >
+                  <input
+                    type="text"
+                    class="form-control input-lg"
+                    placeholder="Your Fax"
+                    id="fax"
+                    name="fax"
+                    formControlName="fax"
+                  />
+                </div>
+              </fieldset>
+              <fieldset>
+                <h2 class="sub-title">YOUR PASSWORD</h2>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-password"></span
+                    ><span class="input-text">Password*</span></span
+                  >
+                  <input
+                    type="password"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Password"
+                    id="password"
+                    name="password"
+                    formControlName="password" autofocus
+                  />
+                  <span
+                    class="help-block"  style="color: red"
+                    *ngIf="
+                      registerForm.get('password').hasError('required') &&
+                      registerForm.get('password').touched">
+                      password required
+                  </span>
+                  <span
+                    class="help-block" style="color: red"
+                    *ngIf="
+                      registerForm.get('password').hasError('minlength') &&
+                      registerForm.get('password').touched
+                    "
+                  >
+                    Şifre en az 4 karakter olmalıdır
+                  </span>
+                  <span
+                    class="help-block"
+                    *ngIf="
+                      registerForm.get('password').hasError('maxlength') &&
+                      registerForm.get('password').touched
+                    "
+                  >
+                    Şifre 8 karakteri geçemez
+                  </span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-password"></span
+                    ><span class="input-text">Password*</span></span
+                  >
+                  <input
+                    type="password"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    formControlName="confirmPassword" autofocus
+                  />
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <fieldset>
+                <h2 class="sub-title">YOUR ADDRESS</h2>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-company"></span
+                    ><span class="input-text">Company</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Company"
+                    id="company"
+                    name="company"
+                    formControlName="company"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-address"></span
+                    ><span class="input-text">Address 1*</span></span
+                  >
+                  <input
+                    type="text"
+                    class="form-control input-lg"
+                    placeholder="Your Address"
+                    id="adress1"
+                    name="adress1"
+                    formControlName="adress1" autofocus
+                  />
+                  <span
+                  class="help-block"  style="color: red"
+                  *ngIf="
+                    registerForm.get('adress1').hasError('required') &&
+                    registerForm.get('adress1').touched">
+                  adress gerekli
+                </span>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-address"></span
+                    ><span class="input-text">Address 2</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Address"
+                    id="adress2"
+                    name="adress2"
+                    formControlName="adress2"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-city"></span
+                    ><span class="input-text">City*</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your City"
+                    id="city"
+                    name="city"
+                    formControlName="city"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-postcode"></span
+                    ><span class="input-text">Post Code*</span></span
+                  >
+                  <input
+                    type="text"
+                    required=""
+                    class="form-control input-lg"
+                    placeholder="Your Post Code"
+                    id="postcode"
+                    name="postcode"
+                    formControlName="postcode"
+                  />
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-country"></span
+                    ><span class="input-text">Country*</span></span
+                  >
+                  <div class="large-selectbox clearfix">
+                    <select
+                      id="country"
+                      name="country"
+                      formControlName="country"
+                      style="position: unset"
+                      class="sbSelector" autofocus
+                    >
+            
+                   
+                        <option value="US">United States</option
+                        ><option value="AA">APO/FPO/DPO</option
+                        ><option value="CA">Canada</option
+                        ><option value="GB">United Kingdom</option
+                        ><option value="AF">Afghanistan</option
+                        ><option value="AL">Albania</option
+                        ><option value="DZ">Algeria</option
+                        ><option value="AS">American Samoa</option
+                        ><option value="AD">Andorra</option
+                        ><option value="AO">Angola</option
+                        ><option value="AI">Anguilla</option
+                        ><option value="AG">Antigua and Barbuda</option
+                        ><option value="AR">Argentina</option
+                        ><option value="AM">Armenia</option
+                        ><option value="AW">Aruba</option
+                        ><option value="AU">Australia</option
+                        ><option value="AT">Austria</option
+                        ><option value="AZ">Azerbaijan Republic</option
+                        ><option value="BS">Bahamas</option
+                        ><option value="BH">Bahrain</option
+                        ><option value="BD">Bangladesh</option
+                        ><option value="BB">Barbados</option
+                        ><option value="BY">Belarus</option
+                        ><option value="BE">Belgium</option
+                        ><option value="BZ">Belize</option
+                        ><option value="BJ">Benin</option
+                        ><option value="BM">Bermuda</option
+                        ><option value="BT">Bhutan</option
+                        ><option value="BO">Bolivia</option
+                        ><option value="BA">Bosnia and Herzegovina</option
+                        ><option value="BW">Botswana</option
+                        ><option value="BR">Brazil</option
+                        ><option value="VG">British Virgin Islands</option
+                        ><option value="BN">Brunei Darussalam</option
+                        ><option value="BG">Bulgaria</option
+                        ><option value="BF">Burkina Faso</option
+                        ><option value="BI">Burundi</option
+                        ><option value="KH">Cambodia</option
+                        ><option value="CM">Cameroon</option
+                        ><option value="CA">Canada</option
+                        ><option value="CV">Cape Verde Islands</option
+                        ><option value="KY">Cayman Islands</option
+                        ><option value="CF">Central African Republic</option
+                        ><option value="TD">Chad</option
+                        ><option value="CL">Chile</option
+                        ><option value="CN">China</option
+                        ><option value="CO">Colombia</option
+                        ><option value="KM">Comoros</option
+                        ><option value="CD"
+                          >Congo, Democratic Republic of the</option
+                        ><option value="CG">Congo, Republic of the</option
+                        ><option value="CK">Cook Islands</option
+                        ><option value="CR">Costa Rica</option
+                        ><option value="CI">Cote d Ivoire (Ivory Coast)</option
+                        ><option value="HR">Croatia, Republic of</option
+                        ><option value="CY">Cyprus</option
+                        ><option value="CZ">Czech Republic</option
+                        ><option value="DK">Denmark</option
+                        ><option value="DJ">Djibouti</option
+                        ><option value="DM">Dominica</option
+                        ><option value="DO">Dominican Republic</option
+                        ><option value="EC">Ecuador</option
+                        ><option value="EG">Egypt</option
+                        ><option value="SV">El Salvador</option
+                        ><option value="GQ">Equatorial Guinea</option
+                        ><option value="ER">Eritrea</option
+                        ><option value="EE">Estonia</option
+                        ><option value="ET">Ethiopia</option
+                        ><option value="FK"
+                          >Falkland Islands (Islas Malvinas)</option
+                        ><option value="FJ">Fiji</option
+                        ><option value="FI">Finland</option
+                        ><option value="FR">France</option
+                        ><option value="GF">French Guiana</option
+                        ><option value="PF">French Polynesia</option
+                        ><option value="GA">Gabon Republic</option
+                        ><option value="GM">Gambia</option
+                        ><option value="GE">Georgia</option
+                        ><option value="DE">Germany</option
+                        ><option value="GH">Ghana</option
+                        ><option value="GI">Gibraltar</option
+                        ><option value="GR">Greece</option
+                        ><option value="GL">Greenland</option
+                        ><option value="GD">Grenada</option
+                        ><option value="GP">Guadeloupe</option
+                        ><option value="GU">Guam</option
+                        ><option value="GT">Guatemala</option
+                        ><option value="GG">Guernsey</option
+                        ><option value="GN">Guinea</option
+                        ><option value="GW">Guinea-Bissau</option
+                        ><option value="GY">Guyana</option
+                        ><option value="HT">Haiti</option
+                        ><option value="HN">Honduras</option
+                        ><option value="HK">Hong Kong</option
+                        ><option value="HU">Hungary</option
+                        ><option value="IS">Iceland</option
+                        ><option value="IN">India</option
+                        ><option value="ID">Indonesia</option
+                        ><option value="IE">Ireland</option
+                        ><option value="IL">Israel</option
+                        ><option value="IT">Italy</option
+                        ><option value="JM">Jamaica</option
+                        ><option value="JP">Japan</option
+                        ><option value="JE">Jersey</option
+                        ><option value="JO">Jordan</option
+                        ><option value="KZ">Kazakhstan</option
+                        ><option value="KE">Kenya</option
+                        ><option value="KI">Kiribati</option
+                        ><option value="KR">Korea, South</option
+                        ><option value="KW">Kuwait</option
+                        ><option value="KG">Kyrgyzstan</option
+                        ><option value="LA">Laos</option
+                        ><option value="LV">Latvia</option
+                        ><option value="LB">Lebanon</option
+                        ><option value="LI">Liechtenstein</option
+                        ><option value="LT">Lithuania</option
+                        ><option value="LU">Luxembourg</option
+                        ><option value="MO">Macau</option
+                        ><option value="MK">Macedonia</option
+                        ><option value="MG">Madagascar</option
+                        ><option value="MW">Malawi</option
+                        ><option value="MY">Malaysia</option
+                        ><option value="MV">Maldives</option
+                        ><option value="ML">Mali</option
+                        ><option value="MT">Malta</option
+                        ><option value="MH">Marshall Islands</option
+                        ><option value="MQ">Martinique</option
+                        ><option value="MR">Mauritania</option
+                        ><option value="MU">Mauritius</option
+                        ><option value="YT">Mayotte</option
+                        ><option value="MX">Mexico</option
+                        ><option value="FM">Micronesia</option
+                        ><option value="MD">Moldova</option
+                        ><option value="MC">Monaco</option
+                        ><option value="MN">Mongolia</option
+                        ><option value="ME">Montenegro</option
+                        ><option value="MS">Montserrat</option
+                        ><option value="MA">Morocco</option
+                        ><option value="MZ">Mozambique</option
+                        ><option value="NA">Namibia</option
+                        ><option value="NR">Nauru</option
+                        ><option value="NP">Nepal</option
+                        ><option value="NL">Netherlands</option
+                        ><option value="AN">Netherlands Antilles</option
+                        ><option value="NC">New Caledonia</option
+                        ><option value="NZ">New Zealand</option
+                        ><option value="NI">Nicaragua</option
+                        ><option value="NE">Niger</option
+                        ><option value="NG">Nigeria</option
+                        ><option value="NU">Niue</option
+                        ><option value="NO">Norway</option
+                        ><option value="OM">Oman</option
+                        ><option value="PK">Pakistan</option
+                        ><option value="PW">Palau</option
+                        ><option value="PA">Panama</option
+                        ><option value="PG">Papua New Guinea</option
+                        ><option value="PY">Paraguay</option
+                        ><option value="PE">Peru</option
+                        ><option value="PH">Philippines</option
+                        ><option value="PL">Poland</option
+                        ><option value="PT">Portugal</option
+                        ><option value="PR">Puerto Rico</option
+                        ><option value="QA">Qatar</option
+                        ><option value="RE">Reunion</option
+                        ><option value="RO">Romania</option
+                        ><option value="RU">Russian Federation</option
+                        ><option value="RW">Rwanda</option
+                        ><option value="SH">Saint Helena</option
+                        ><option value="KN">Saint Kitts-Nevis</option
+                        ><option value="LC">Saint Lucia</option
+                        ><option value="PM">Saint Pierre and Miquelon</option
+                        ><option value="VC"
+                          >Saint Vincent and the Grenadines</option
+                        ><option value="SM">San Marino</option
+                        ><option value="SA">Saudi Arabia</option
+                        ><option value="SN">Senegal</option
+                        ><option value="RS">Serbia</option
+                        ><option value="SC">Seychelles</option
+                        ><option value="SL">Sierra Leone</option
+                        ><option value="SG">Singapore</option
+                        ><option value="SK">Slovakia</option
+                        ><option value="SI">Slovenia</option
+                        ><option value="SB">Solomon Islands</option
+                        ><option value="SO">Somalia</option
+                        ><option value="ZA">South Africa</option
+                        ><option value="ES">Spain</option
+                        ><option value="LK">Sri Lanka</option
+                        ><option value="SR">Suriname</option
+                        ><option value="SJ">Svalbard</option
+                        ><option value="SZ">Swaziland</option
+                        ><option value="SE">Sweden</option
+                        ><option value="CH">Switzerland</option
+                        ><option value="TW">Taiwan</option
+                        ><option value="TJ">Tajikistan</option
+                        ><option value="TZ">Tanzania</option
+                        ><option value="TH">Thailand</option
+                        ><option value="TG">Togo</option
+                        ><option value="TO">Tonga</option
+                        ><option value="TT">Trinidad and Tobago</option
+                        ><option value="TN">Tunisia</option
+                        ><option value="TR">Turkey</option
+                        ><option value="TM">Turkmenistan</option
+                        ><option value="TC">Turks and Caicos Islands</option
+                        ><option value="TV">Tuvalu</option
+                        ><option value="UG">Uganda</option
+                        ><option value="UA">Ukraine</option
+                        ><option value="AE">United Arab Emirates</option
+                        ><option value="GB">United Kingdom</option
+                        ><option value="US">United States</option
+                        ><option value="UY">Uruguay</option
+                        ><option value="UZ">Uzbekistan</option
+                        ><option value="VU">Vanuatu</option
+                        ><option value="VA">Vatican City State</option
+                        ><option value="VE">Venezuela</option
+                        ><option value="VN">Vietnam</option
+                        ><option value="VI">Virgin Islands (U.S.)</option
+                        ><option value="WF">Wallis and Futuna</option
+                        ><option value="EH">Western Sahara</option
+                        ><option value="WS">Western Samoa</option
+                        ><option value="YE">Yemen</option
+                        ><option value="ZM">Zambia</option
+                        ><option value="ZW">Zimbabwe</option> 
+
+                      
+                    </select>
+                    <span
+                    class="help-block"  style="color: red"
+                    *ngIf="
+                      registerForm.get('country').hasError('required') &&
+                      registerForm.get('country').touched">
+                    ülke gerekli
+                  </span>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"
+                    ><span class="input-icon input-icon-region"></span
+                    ><span class="input-text">Region / State*</span></span
+                  >
+                  <div class="large-selectbox clearfix">
+                    <select
+                      id="regionstate"
+                      name="regionstate"
+                      formControlName="regionstate"
+                      style="position: unset"
+                      class="sbSelector"
+                    >
+                      <option value="Brazil">California</option>
+                      <option value="France">Texas</option>
+                      <option value="Italy">Newyork</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <fieldset class="half-margin">
+                <h2 class="sub-title">NEWSLETTER</h2>
+                <div class="input-desc-box">
+                  <span class="separator icon-box">+</span>I wish to subscribe
+                  to the Venedor newsletter.
+                </div>
+                <div class="input-group custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checbox-container"
+                    ><i class="fa fa-check"></i
+                  ></span>
+                  I have reed and agree to the <a>Privacy Policy</a>.
+                </div>
+              </fieldset>
+              <input
+                value="CREATE MY ACCCOUNT"
+                type="submit"
+                class="btn btn-custom-2 md-margin"
+              />
+              <h6>{{registerForm.status|json}}</h6>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

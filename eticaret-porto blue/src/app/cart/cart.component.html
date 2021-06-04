@@ -1,0 +1,179 @@
+<section id="content">
+<div id="breadcrumb-container" ><div class="container"><ul class="breadcrumb" style="background-color: transparent;margin-bottom:0px"><li><a routerLink="/main">Home</a></li><li class="active">Shopping Cart</li></ul></div></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <header class="content-title">
+        <h1  style="font-family: Oswald,Arial,sans-serif" class="title">Shopping Cart</h1>
+        <p class="title-desc" style="font-family: Ubuntu;">
+          Just this week, you can use the free premium delivery.
+        </p>
+      </header>
+      <div class="xs-margin"></div>
+      <div class="row">
+        <div class="col-md-12 table-responsive">
+          <table class="table cart-table">
+            <thead>
+              <tr>
+                <th class="table-title" style="font-family: Ubuntu;">
+                  Product Name
+                </th>
+                <th class="table-title" style="font-family: Ubuntu;">
+                  Product Code
+                </th>
+                <th class="table-title" style="font-family: Ubuntu;">
+                  Unit Price
+                </th>
+                <th class="table-title" style="font-family: Ubuntu;">
+                  Quantity
+                </th>
+                <th class="table-title" style="font-family: Ubuntu;">
+                  SubTotal
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of carts">
+              <tr>
+                <td class="item-name-col">
+                  <figure>
+                    <a href="#"
+                      ><img
+                      src="{{ item.image }}"
+                        alt="Lowlands Lace Blouse"
+                    /></a>
+                  </figure>
+                  <header class="item-name" style="font-family: Ubuntu;">
+                    <a href="#">{{ item.title }}</a>
+                  </header>
+                  <ul>
+                    <li>Color: White</li>
+                    <li>Size: SM</li>
+                  </ul>
+                </td>
+                <td class="item-code">MP125984154</td>
+                <td class="item-price-col">
+                  <span
+                    class="item-price-special"
+                    style="font-family: &quot;Open Sans&quot;;"
+                    >{{item.price | currency: "USD":true:"2.2-4" }}</span
+                  >
+                </td>
+                <td>
+                  <div class="custom-quantity-input">
+                    <input type="text" name="quantity" value="1" />
+                    <a
+                      href="#"
+                      onclick="return!1"
+                      class="quantity-btn quantity-input-up"
+                      ><i class="fa fa-angle-up"></i
+                    ></a>
+                    <a
+                      href="#"
+                      onclick="return!1"
+                      class="quantity-btn quantity-input-down"
+                      ><i class="fa fa-angle-down"></i
+                    ></a>
+                  </div>
+                </td>
+                <td class="item-total-col">
+                  <span
+                    class="item-price-special"
+                    style="font-family: &quot;Open Sans&quot;;"
+                    >{{item.price | currency: "USD":true:"2.2-4"}}</span
+                  >
+                  <a (click)="removecart(item)" class="close-button"></a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="lg-margin"></div>
+      <div class="row">
+        <div class="col-md-8 col-sm-12 col-xs-12 lg-margin">
+          <div class="tab-container left clearfix">
+            <ul class="nav-tabs" style="height: 320px;">
+            
+              <li class="active"  style="font-family: &quot;Open Sans&quot;;">
+                <a href="#discount" data-toggle="tab">Discount Code</a>
+              </li>
+              <li style="font-family: &quot;Open Sans&quot;;">
+                <a
+                  href="#gift"
+                  data-toggle="tab"
+                  style="border-bottom-color: transparent;"
+                  >Gift voucher</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content clearfix">
+             
+              <div class="tab-pane active"    id="discount">
+                <p>Enter your discount coupon code here.</p>
+                <form action="#">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      required=""
+                      class="form-control"
+                      placeholder="Coupon code"
+                    />
+                  </div>
+                  <input
+                    type="submit"
+                    class="btn btn-custom-2"
+                    value="APPLY COUPON"
+                  />
+                </form>
+              </div>
+              <div class="tab-pane" id="gift">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sequi dignissimos nostrum debitis optio molestiae in quam
+                  dicta labore obcaecati ullam necessitatibus animi deleniti
+                  minima dolor suscipit nobis est excepturi inventore.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <table class="table total-table" style="font-family: Ubuntu;">
+            <tbody>
+              <tr>
+                <td class="total-table-title">Subtotal:</td>
+                <td>{{
+                    sum | currency: "USD":true:"2.2-4"
+                  }}</td>
+              </tr>
+              <tr>
+                <td class="total-table-title">Shipping:</td>
+                <td>Free Shipping</td>
+              </tr>
+              <tr>
+                <td class="total-table-title">TAX (0%):</td>
+                <td>0 </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total:</td>
+                <td>{{
+                    sum | currency: "USD":true:"2.2-4"
+                  }}</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="md-margin"></div>
+          <a  (click)="continue()"  style="margin-right: 5px;"  class="btn btn-custom-2">CONTINUE SHOPPING</a>
+          <a href="#" class="btn btn-custom">CHECKOUT</a>
+        </div>
+      </div>
+      <div class="md-margin2x"></div>
+     
+    </div>
+  </div>
+</div>
+</section>
